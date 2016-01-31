@@ -1,4 +1,5 @@
 # WeatherStation Bot #
+![pct](http://make.kosakalab.com/.blog/wp-content/uploads/2016/01/weather-bot.png)
 ## About ##
 This bot tweets barometric pressure and temperature automatically.<br />
 Tweet interval 30 miniutes (default)
