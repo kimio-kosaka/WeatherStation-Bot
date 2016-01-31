@@ -45,7 +45,7 @@ board.on("ready", function() {
     
     // measuring and emit data
     function get_data(){
-        mdate = new Date().toFormat('YYYY,MM,DD,HH24,MI');
+        mdate = new Date().toFormat('YYYY/MM/DD HH24:MI');
         console.log(mdate);
         multi.once("change", function(data) {
             var temperature = Math.round(data.temperature.celsius*10) / 10;
@@ -57,7 +57,7 @@ board.on("ready", function() {
             console.log("--------------------------------------");
             
             // emit data to server
-            client.post('statuses/update', {status: temperature+' °C  /  '+pressure+' hPa'},  function(error, tweet, response){
+            client.post('statuses/update', {status: mdate+' \n'+temperature+' °C  /  '+pressure+' hPa'},  function(error, tweet, response){
                  if(error) throw error;
             });          
             // logging  
